@@ -1,6 +1,6 @@
 # flutter_template
 
-A new Flutter project.
+Flutter模板，已实现基础框架、国际化、主题换肤、关于我们、登录注册等功能
 
 ## Getting Started
 
