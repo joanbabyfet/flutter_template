@@ -88,7 +88,7 @@ class SponsorPage extends StatelessWidget {
   //保存网络图片
   void saveImage(String url) async {
     late dynamic result;
-    //申请访问照片权限
+    //申请访问照片权限, ios要在Info.plist加提示语否则会闪退
     if (await PermissionUtil.requestPermissionStorage()) {
       var cacheData = await getNetworkImageData(url, useCache: true); //获取网路图片, 这里使用缓存
       String fileName = DateTime.fromMillisecondsSinceEpoch(int.parse(Utils.timestamp())).toString();

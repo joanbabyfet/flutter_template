@@ -12,6 +12,7 @@ class WebController extends GetxController {
     super.onInit();
     debugPrint('初始化');
 
+    //ios打不开http地址, 记得在Info.plist添加对http信任
     webViewController = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..loadRequest(Uri.parse(url!));

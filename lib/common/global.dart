@@ -11,7 +11,6 @@ import '../utils/logger_util.dart';
 import '../utils/storage_util.dart';
 import 'app_theme.dart';
 import 'constant.dart';
-import 'package:get/get.dart';
 
 // 全局配置
 class Global {

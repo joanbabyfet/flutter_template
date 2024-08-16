@@ -27,9 +27,9 @@ class AppTheme {
     isDarkMode = StorageUtil.containsKey(STORAGE_IS_DARK_KEY) ? StorageUtil.get(STORAGE_IS_DARK_KEY) : false;
     Get.changeThemeMode(AppTheme.isDarkMode ? ThemeMode.dark : ThemeMode.light);
   }
-  static MaterialColor currentColor() => materialColors[themeIndex];
+  static Color currentColor() => materialColors[themeIndex];
   static Color primaryColor(BuildContext context) => Theme.of(context).primaryColor;
-  static const darkBg = Colors.black;
+  static Color darkBg = Colors.black;
 
   //改变主题颜色
   static changeThemeColor(int index){
@@ -58,43 +58,28 @@ class AppTheme {
   }
 
   static ThemeData theme() {
-    var primary = currentColor();
+    var color = currentColor();
 
     //从上层 Theme 扩展, 可不用从头定制一套样式
     return ThemeData.light().copyWith(
-      brightness: Brightness.light,
-      primaryColor: primary, //主色
-      scaffoldBackgroundColor: Colors.white,
-      textTheme: const TextTheme(
-        bodyMedium: TextStyle(color: Colors.black),
-        headlineMedium: TextStyle(color: Colors.black),
-      ),
-      appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        systemOverlayStyle: SystemUiOverlayStyle.light,
-        iconTheme: IconThemeData(color: Colors.black),
+      primaryColor: color, //主色
+      appBarTheme: AppBarTheme(
+        elevation: 0, //阴影
         centerTitle: true,
       ),
     );
   }
 
   static ThemeData darkTheme() {
-    var primary = currentColor();
+    var color = currentColor();
 
     //从上层 Theme 扩展, 可不用从头定制一套样式
     return ThemeData.dark().copyWith(
-      brightness: Brightness.dark,
-      primaryColor: primary, //主色
+      primaryColor: color, //主色
       scaffoldBackgroundColor: darkBg,
-      textTheme: const TextTheme(
-        bodyMedium: TextStyle(color: Colors.white),
-        headlineMedium: TextStyle(color: Colors.white),
-      ),
-      appBarTheme: const AppBarTheme(
+      appBarTheme: AppBarTheme(
         backgroundColor: darkBg,
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.white),
         centerTitle: true,
       ),
     );

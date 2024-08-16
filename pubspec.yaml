@@ -88,14 +88,14 @@ dependencies:
   date_format: ^2.0.7
   # 谷歌字型
   google_fonts: ^6.2.1
-  # 网路连接检查
-  connectivity_plus: ^6.0.5
   # 多图查看、缩放、裁切、缓存加载
   extended_image: ^8.2.1
   # 加载中动画
   flutter_easyloading: ^3.0.5
   # 保存网络图片至本地
   image_gallery_saver: ^2.0.3
+  # 网路连接检查
+  connectivity_plus: ^6.0.5
   # 骨架屏
 
 dev_dependencies:
